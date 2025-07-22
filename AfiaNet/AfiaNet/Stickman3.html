@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #botonFinal {
+      display: none; /* Oculto al principio */
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 45px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="videoEjemplo" width="1840" height="1260" autoplay muted>
+    <source src="Persiguiendo1.mp4" type="video/mp4">
+  </video>
+
+  <br>
+
+  <button id="botonFinal" onclick="manejarBoton()">Seguirle</button>
+
+  <script>
+    const video = document.getElementById('videoEjemplo');
+    const boton = document.getElementById('botonFinal');
+
+    // Mostrar botón cuando termina el video
+    video.addEventListener('ended', () => {
+      boton.style.display = 'inline-block';
+    });
+
+    function manejarBoton() {
+      // Mostrar alerta solo una vez
+      if (!localStorage.getItem('alertaMostrada')) {
+        alert("¡A ver si consigues atraparme en medio de la pantalla!");
+        localStorage.setItem('alertaMostrada', 'true');
+      }
+
+      // Redirigir después (opcional)
+      window.location.href = 'Stickman4.html';
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <script>
+    // Esperar 5 segundos (5000 milisegundos) y mostrar la alerta
+    setTimeout(() => {
+      alert("Stickman:Deja de seguirme o te arrepentirás");
+    },6900);
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <script>
+    // Esperar 5 segundos (5000 milisegundos) y mostrar la alerta
+    setTimeout(() => {
+      alert("Stickman:Además eres muy lento con el ordenador");
+    }, 5090);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #botonFinal {
+      display: none; /* Oculto al principio */
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 45px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<title>Se escapó otra vez</title>
+  <video id="videoEjemplo" width="1840" height="1260" autoplay muted>
+    <source src="Caminando.mp4" type="video/mp4">
+  </video>
+
+  <br>
+
+  <button id="botonFinal" onclick="manejarBoton()">Seguirle</button>
+
+  <script>
+    const video = document.getElementById('videoEjemplo');
+    const boton = document.getElementById('botonFinal');
+
+    // Mostrar botón cuando termina el video
+    video.addEventListener('ended', () => {
+      boton.style.display = 'inline-block';
+    });
+
+    function manejarBoton() {
+      // Mostrar alerta solo una vez
+      if (!localStorage.getItem('alertaMostrada')) {
+      
+        
+      }
+
+      // Redirigir después (opcional)
+      window.location.href = 'Stickman3.html';
+    }
+  </script>
+
+</body>
+</html>
