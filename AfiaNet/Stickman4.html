@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Aléjate!</title>
+</head>
+<body>
+  <!-- Elemento de audio oculto -->
+  <audio id="miSonido" src="sonido.mp3"></audio>
+
+  <script>
+    // Esperar 5 segundos y luego reproducir el sonido
+    setTimeout(() => {
+      const sonido = document.getElementById('miSonido');
+      sonido.play().catch((e) => {
+        console.log("El navegador bloqueó el sonido:", e);
+      });
+    }, 5000);
+  </script>
+</body>
+</html>
