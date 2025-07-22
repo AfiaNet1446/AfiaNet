@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Video con botón y sonido</title>
   <style>
     #botonFinal {
       display: none; /* Oculto al principio */
@@ -18,7 +19,7 @@
 </head>
 <body>
 
-  <video id="videoEjemplo" width="1840" height="1260" autoplay muted>
+  <video id="videoEjemplo" width="840" height="560" autoplay muted>
     <source src="Walkunc.mp4" type="video/mp4">
   </video>
 
@@ -26,9 +27,14 @@
 
   <button id="botonFinal" onclick="manejarBoton()">Seguirle</button>
 
+  <button id="activarSonido" style="display:none;">Activar sonido</button>
+  <audio id="sonido" src="Walk.acc"></audio>
+
   <script>
     const video = document.getElementById('videoEjemplo');
     const boton = document.getElementById('botonFinal');
+    const btnSonido = document.getElementById('activarSonido');
+    const audio = document.getElementById('sonido');
 
     // Mostrar botón cuando termina el video
     video.addEventListener('ended', () => {
@@ -36,74 +42,30 @@
     });
 
     function manejarBoton() {
-      // Mostrar alerta solo una vez
+      // Marcar que alerta fue mostrada (puedes agregar lógica si quieres)
       if (!localStorage.getItem('alertaMostrada')) {
-      
-        
+        alert("¡Alerta mostrada por primera vez!");
+        localStorage.setItem('alertaMostrada', 'true');
       }
 
-      // Redirigir después (opcional)
+      // Redirigir a otra página
       window.location.href = 'Stickman2.html';
     }
-  </script>
 
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <button id="activarSonido" style="display:none;">Activar sonido</button>
-  <audio id="sonido" src="Walk.acc"></audio>
-
-  <script>
+    // Función para reproducir sonido (botón invisible)
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('permitirSonido')) {
-        // Mostrar un botón invisible para garantizar la interacción
-        const btn = document.getElementById('activarSonido');
-        btn.style.display = 'block';
-        btn.click();
+        btnSonido.style.display = 'block';
+        btnSonido.click();
       }
     });
 
-    document.getElementById('activarSonido').addEventListener('click', () => {
-      const audio = document.getElementById('sonido');
-      audio.play().
-        
+    btnSonido.addEventListener('click', () => {
+      audio.play().catch(e => {
+        console.log("Error al reproducir audio:", e);
       });
     });
   </script>
+
 </body>
 </html>
-
-

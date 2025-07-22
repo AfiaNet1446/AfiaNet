@@ -2,57 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sufian </title>
-</head>
-<body>
-  <h1>¡Hola y Bienvenido a AfiaNet !</h1>
-  <p>Esta versión es una prueba.</p>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Afia Net</title>
-</head>
-<body>
-  <h1>Hecho por:Sufian Afia</h1>
-</body>
-</html>
-<body>
-</body>
-<style>
-  body {
-    background-color: yellow;
-  }
-</style>
-<style>
-  body {
-    background-color: yellow;
-  }
-
-  button {
-    background-color: lime;
-    color: Blue;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-  }
-</style>
-<head>
-  <meta charset="UTF-8">
-  <title>Sufian</title>
-  <style>
-    body {
-      background-color: yellow;
-    }
-  </style>
-</head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Inicio</title>
+  <title>AfiaNet - Menú Principal</title>
   <style>
     body {
       background-color: #fffacd;
@@ -76,52 +26,55 @@
     a:hover {
       background-color: #ffaa00;
     }
-  </style>
-</head>
-  <p>Selecciona un apartado:</p>
-
-  <a href="contacto.html">Correo</a>
-  <a href="Stickman.html">¡Encuentralo!</a>
-
-
-<div style="text-align:center; margin-top:50px;">
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <style>
-    /* Evita clics, selección y menú contextual en el video */
+    button {
+      background-color: lime;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    /* Protege el video */
     #videoProtegido {
-      pointer-events: none;      /* No permite ningún clic */
-      user-select: none;         /* No permite seleccionar */
+      pointer-events: none;
+      user-select: none;
+      width: 740px;
+      height: 660px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <video id="videoProtegido" width="740" height="660" autoplay loop muted>
-    <source src="Saludando.mp4" type="video/mp4">
-  </video>
 
+  <h1>¡Hola y Bienvenido a AfiaNet!</h1>
+  <p>Esta versión es una prueba.</p>
 
+  <p>Selecciona un apartado:</p>
+  <a href="contacto.html">Correo</a>
+  <a href="Stickman.html">¡Encuéntralo!</a>
 
+  <div>
+    <video id="videoProtegido" autoplay loop muted>
+      <source src="Saludando.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
 
-
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <h1>¡Porfavor!</h1>
+  <h2>¡Por favor!</h2>
   <p>¿Permites que AfiaNet tengan acceso a tus archivos y datos personales?</p>
   <button onclick="aceptarSonido()">¡Ceder Datos!</button>
 
   <script>
     function aceptarSonido() {
       localStorage.setItem('permitirSonido', 'true');
-      window.location.href = 'aviso.vbs';
+      // Aquí no puedes abrir un archivo VBS por seguridad en el navegador,
+      // pero puedes redirigir a otra página si quieres.
+      alert("Gracias por aceptar.");
+      // window.location.href = 'aviso.html'; // redirige a otra página HTML
     }
   </script>
+
 </body>
 </html>

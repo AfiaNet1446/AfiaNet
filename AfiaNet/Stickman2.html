@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Se escapó otra vez</title>
   <style>
     #botonFinal {
       display: none; /* Oculto al principio */
@@ -17,8 +18,8 @@
   </style>
 </head>
 <body>
-<title>Se escapó otra vez</title>
-  <video id="videoEjemplo" width="1840" height="1260" autoplay muted>
+
+  <video id="videoEjemplo" width="840" height="560" autoplay muted>
     <source src="Caminando.mp4" type="video/mp4">
   </video>
 
@@ -36,13 +37,11 @@
     });
 
     function manejarBoton() {
-      // Mostrar alerta solo una vez
       if (!localStorage.getItem('alertaMostrada')) {
-      
-        
+        alert("¡Alerta mostrada por primera vez!");
+        localStorage.setItem('alertaMostrada', 'true');
       }
-
-      // Redirigir después (opcional)
+      // Redirige a la siguiente página
       window.location.href = 'Stickman3.html';
     }
   </script>
